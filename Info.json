@@ -1,0 +1,12 @@
+{
+	"Id": "S282C",
+	"DisplayName": "Auxiliary Tender",
+	"Version": "0.1.2",
+	"Author": "AdmiralHendrik",
+	"ManagerVersion": "0.27.3",
+	"EntryMethod": "AuxiliaryTender.Main.Load",
+	"AssemblyName": "AuxiliaryTender.dll",
+	"Requirements": [
+		"DVCustomCarLoader"
+	]
+}

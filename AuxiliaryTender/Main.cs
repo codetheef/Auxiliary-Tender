@@ -24,6 +24,11 @@ public static class Main
 			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			Logger?.Log("Auxiliary Tender Mod Loaded");
 			Directory.EnumerateFiles(modEntry.Path, "car.json", SearchOption.AllDirectories);
+			WorldStreamingInit.LoadingFinished += Start;
+			if (WorldStreamingInit.Instance && WorldStreamingInit.IsLoaded)
+			{
+				Start();
+			}
 			modEntry.OnUnload = Unload;
 			// Other plugin startup logic
 		}
@@ -41,6 +46,16 @@ public static class Main
 	{
 		entry.Logger.Log("Unloading");
 		harmony?.UnpatchAll(entry.Info.Id);
+		WorldStreamingInit.LoadingFinished -= Start;
+		Stop();
 		return true;
+	}
+	private static void Start()
+	{
+		SpawnMonitor.Create();
+	}
+	private static void Stop()
+	{
+		SpawnMonitor.Destroy();
 	}
 }

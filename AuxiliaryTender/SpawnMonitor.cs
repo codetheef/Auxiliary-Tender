@@ -9,8 +9,8 @@ namespace AuxiliaryTender
 {
 	internal class SpawnMonitor
 	{
-		private static readonly String[] validTankNames = new String[] { "S282C" };
 		public static SpawnMonitor? Instance { get; private set; }
+		private static List<TrainCar> pendingCars = new List<TrainCar>();
 		public static void Destroy()
 		{
 			if (null != Instance)
@@ -32,6 +32,8 @@ namespace AuxiliaryTender
 		{
 			var spawner = SingletonBehaviour<CarSpawner>.Instance;
 			spawner.CarSpawned += AttachBehavior;
+			pendingCars.ForEach(car => AttachWaterModule(car));
+			pendingCars.Clear();
 		}
 
 		private void Stop()
@@ -42,7 +44,7 @@ namespace AuxiliaryTender
 		private void AttachBehavior(TrainCar car)
 		{
 			Main.Logger?.Log("Loaded a car " + car.name);
-			if (validTankNames.Any(name => car.name.Contains(name)))
+			if (Constants.validTankNames.Any(name => car.name.Contains(name)))
 			{
 				AttachWaterModule(car);
 			}
@@ -54,9 +56,15 @@ namespace AuxiliaryTender
 			car.gameObject.AddComponent<WaterModule>();
 		}
 
-		private void AddWaterTank(TrainCar car)
+		internal static void Monitor(TrainCar result)
 		{
-			throw new NotImplementedException();
+			if (Instance != null)
+			{
+				Instance.AttachWaterModule(result);
+			} else
+			{
+				pendingCars.Add(result);
+			}
 		}
 	}
 }

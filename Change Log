@@ -1,3 +1,3 @@
 This is a Official Model Update
-Version : 0.1.2
-Change : fixed the "invisible ladder", Light having no texture, buffer stems not showing
+Version : 0.1.3
+Change : fixed the Buffer stems not showing, Removed Lights

@@ -68,19 +68,13 @@ namespace AuxiliaryTender
 		private float calcMove(float targetCapacity, float targetAmount)
 		{
 			var targetNormalized = targetAmount / targetCapacity;
-			Main.Logger?.Log("Target normalized: " + targetNormalized + ", Aux Normalized: " + WaterNormalized);
 			var normalizedMove = Math.Max(0, WaterNormalized - targetNormalized);
 			var move = Math.Min(normalizedMove * waterCapacity, normalizedMove * targetCapacity);
-			Main.Logger?.Log("Calculated " + move);
 			move = Math.Max(0, move);
-			Main.Logger?.Log("Floored " + move);
 			move = Math.Min(move, this.Water);
-			Main.Logger?.Log("Limited by water " + move);
 			move = Math.Min(move, targetCapacity - targetAmount);
-			Main.Logger?.Log("Limited by destination capacity " + move);
 			var maxFlow = 800.0f * Math.Max(0, WaterNormalized - targetNormalized); //if we're full and dest is empty - allow max flow, slow down as we equalize
 			move = Math.Min(move, maxFlow); // can't move more than maxFlow
-			Main.Logger?.Log("Limited by flow " + move);
 			Main.Logger?.Log("Moving " + move + " Water");
 			return move;
 		}

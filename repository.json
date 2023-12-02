@@ -1,0 +1,9 @@
+{
+	"Releases": [
+		{
+			"Id": "MOD_NAME",
+			"Version": "1.0.0",
+			"DownloadUrl": "https://github.com/codetheef/Auxiliary-Tender/releases/download/0.2.0/S282C_v0.2.0.zip"
+		}
+	]
+}

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuxiliaryTender
+namespace AuxiliaryTender.Patches
 {
 	[HarmonyPatch(typeof(CarsSaveManager))]
 	internal static class CarSaveManagerPatches

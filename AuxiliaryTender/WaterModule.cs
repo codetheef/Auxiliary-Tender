@@ -1,6 +1,9 @@
 using DV.Logic.Job;
 using DV.PitStops;
+using DV.Simulation.Cars;
 using DV.ThingTypes;
+using LocoSim.Implementations;
+using LocoSim.Resources;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,9 +18,12 @@ namespace AuxiliaryTender
 {
 	internal class WaterModule : MonoBehaviour
 	{
-		public float Water { get; set; } = 30000f;
-		private float waterCapacity = 30000f;
-		public float WaterNormalized => Water / waterCapacity;
+		private ResourceContainerController resourceController;
+
+		public float Level => resourceController.GetResourceContainer(ResourceContainerType.WATER).amountReadOut.Value;
+		public float Capacity => resourceController.GetResourceContainer(ResourceContainerType.WATER).capacity;
+		public float WaterNormalized => Level / Capacity;
+		public ResourceContainer Container => resourceController.GetResourceContainer(ResourceContainerType.WATER);
 		private TrainCar TrainCar { get; set; }
 		public CarPitStopParametersBase? FrontCar { get; private set; }
 		public CarPitStopParametersBase? RearCar { get; private set; }
@@ -32,6 +38,14 @@ namespace AuxiliaryTender
 				Main.Logger?.Log("Failed to load water module");
 				return;
 			}
+			var simController = trainCar.GetComponent<SimController>();
+			if (simController == null)
+			{
+				Destroy(this);
+				Main.Logger?.Log("Failed to load water module, no sim controller");
+				return;
+			}
+			this.resourceController = simController.resourceContainerController;
 			this.TrainCar = trainCar;
 			ProcessConnections(TrainCar.trainset);
 			TrainCar.TrainsetChanged += ProcessConnections;
@@ -61,26 +75,20 @@ namespace AuxiliaryTender
 			{
 				var move = calcMove(tank.maxValue, tank.value);
 				car.UpdateCarPitStopParameter(ResourceType.Water, move);
-				this.Water -= move;
+				this.Container.consumeExtIn.Value = move;
 			}
 		}
 
 		private float calcMove(float targetCapacity, float targetAmount)
 		{
 			var targetNormalized = targetAmount / targetCapacity;
-			Main.Logger?.Log("Target normalized: " + targetNormalized + ", Aux Normalized: " + WaterNormalized);
 			var normalizedMove = Math.Max(0, WaterNormalized - targetNormalized);
-			var move = Math.Min(normalizedMove * waterCapacity, normalizedMove * targetCapacity);
-			Main.Logger?.Log("Calculated " + move);
+			var move = Math.Min(normalizedMove * Capacity, normalizedMove * targetCapacity);
 			move = Math.Max(0, move);
-			Main.Logger?.Log("Floored " + move);
-			move = Math.Min(move, this.Water);
-			Main.Logger?.Log("Limited by water " + move);
+			move = Math.Min(move, Level);
 			move = Math.Min(move, targetCapacity - targetAmount);
-			Main.Logger?.Log("Limited by destination capacity " + move);
-			var maxFlow = 800.0f * Math.Max(0, WaterNormalized - targetNormalized); //if we're full and dest is empty - allow max flow, slow down as we equalize
+			var maxFlow = Mathf.Lerp(10.0f, 800.0f, WaterNormalized - targetNormalized);
 			move = Math.Min(move, maxFlow); // can't move more than maxFlow
-			Main.Logger?.Log("Limited by flow " + move);
 			Main.Logger?.Log("Moving " + move + " Water");
 			return move;
 		}

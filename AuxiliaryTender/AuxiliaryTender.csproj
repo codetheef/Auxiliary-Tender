@@ -37,9 +37,6 @@
 	<ItemGroup>
 		<DataFiles Include="$(ProjectDir)cars\**\*" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Patches\" />
-	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<!-- Copy to build folder -->

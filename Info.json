@@ -8,6 +8,8 @@
 	"AssemblyName": "AuxiliaryTender.dll",
 	"Repository": "https://raw.githubusercontent.com/codetheef/Auxiliary-Tender/main/repository.json",
 	"Requirements": [
-		"DVCustomCarLoader"
-	]
+		"DVCustomCarLoader",
+		"CCLCareerSpawner"
+	],
+	"LoadAfter": [ "DVCustomCarLoader", "CCLCareerSpawner" ]
 }

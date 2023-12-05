@@ -1,7 +1,14 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using CCLCareerSpawnerTypes;
+using DV;
+using DV.ThingTypes;
 using HarmonyLib;
+using UnityEngine;
 using UnityModManagerNet;
 using static UnityModManagerNet.UnityModManager;
 
@@ -23,13 +30,13 @@ public static class Main
 			harmony = new Harmony(modEntry.Info.Id);
 			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			Logger?.Log("Auxiliary Tender Mod Loaded");
-			Directory.EnumerateFiles(modEntry.Path, "car.json", SearchOption.AllDirectories);
 			WorldStreamingInit.LoadingFinished += Start;
 			if (WorldStreamingInit.Instance && WorldStreamingInit.IsLoaded)
 			{
 				Start();
 			}
 			modEntry.OnUnload = Unload;
+			BehaviorHandler.AttachBehavior();
 			// Other plugin startup logic
 		}
 		catch (Exception ex)

@@ -82,6 +82,7 @@ namespace AuxiliaryTender
 				 var simController = prefab.gameObject.AddComponent<SimController>();
 				 simController.connectionsDefinition = simConnections;
 				 simController.otherSimControllers = new DV.Simulation.Controllers.ASimInitializedController[0];
+				 prefab.gameObject.AddComponent<WaterModule>();
 				 Main.Logger?.Log("Sim Controller created and initialized for prefab " + prefab.name);
 			 });
 			TerminateAttach();

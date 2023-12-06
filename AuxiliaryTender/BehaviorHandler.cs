@@ -1,4 +1,5 @@
 using DV;
+using DV.CabControls.Spec;
 using DV.Damage;
 using DV.Logic.Job;
 using DV.Simulation.Cars;
@@ -49,8 +50,9 @@ namespace AuxiliaryTender
 			Main.Logger?.Log("Aux tender found, patching");
 			(from l in Globals.G.Types.Liveries
 			 where l.prefab != null && Constants.validTankNames.Any(name => l.prefab.name.Contains(name))
-			 select l.prefab).ToList().ForEach(prefab =>
+			 select l).ToList().ForEach(livery =>
 			 {
+				 var prefab = livery.prefab;
 				 Main.Logger?.Log("Patching prefab " + prefab.name);
 				 var waterBox = FindRecursive(prefab.transform, "[WaterCollider]");
 				 Main.Logger?.Log("waterBox found " + waterBox);
@@ -83,6 +85,29 @@ namespace AuxiliaryTender
 				 simController.connectionsDefinition = simConnections;
 				 simController.otherSimControllers = new DV.Simulation.Controllers.ASimInitializedController[0];
 				 prefab.gameObject.AddComponent<WaterModule>();
+				 var externalInteractions = livery.externalInteractablesPrefab;
+				 var hatch = FindRecursive(externalInteractions.transform, "AxTenderHatch")?.gameObject;
+				 if (hatch != null)
+				 {
+					 var lever = hatch.AddComponent<Lever>();
+					 lever.rigidbodyMass = 30;
+					 lever.rigidbodyDrag = 4;
+					 lever.rigidbodyAngularDrag = 0;
+					 lever.blockAngularDrag = 0;
+					 lever.blockDrag = 0;
+					 lever.maxForceAppliedMagnitude = float.PositiveInfinity;
+					 lever.scrollWheelSpring = 0;
+					 lever.notches = 2;
+					 lever.jointAxis = Vector3.right;
+					 lever.useSpring = true;
+					 lever.jointSpring = 175;
+					 lever.jointDamper = 17.5f;
+					 lever.useLimits = true;
+					 lever.jointLimitMin = 0;
+					 lever.jointLimitMax = 160;
+					 lever.colliderGameObjects = new GameObject[] { hatch.transform.Find("[colliders]").gameObject };
+					 hatch.transform.Find("water fill blocker").gameObject.layer = 15; // force this one to layer 15 so it can prevent filling.
+				 }
 				 Main.Logger?.Log("Sim Controller created and initialized for prefab " + prefab.name);
 			 });
 			TerminateAttach();

@@ -1,3 +1,4 @@
+using DV.Damage;
 using DV.Logic.Job;
 using DV.PitStops;
 using DV.Simulation.Cars;
@@ -50,6 +51,7 @@ namespace AuxiliaryTender
 			ProcessConnections(TrainCar.trainset);
 			TrainCar.TrainsetChanged += ProcessConnections;
 			waterCoro = StartCoroutine(MoveWater());
+			trainCar.GetComponentInChildren<DamageController>().IgnoreDamage(true);
 		}
 
 		private IEnumerator MoveWater()

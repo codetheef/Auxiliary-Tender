@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7827193555322370895}
   m_Layer: 0
-  m_Name: S282C_interactables
+  m_Name: S282C_interactables 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2168696499057942873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00376}
+  m_LocalPosition: {x: 0, y: 0.00035, z: -0.00409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 69373532519727268}
@@ -378,7 +378,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.016794166, y: 0.00018538936, z: 0.006350622}
-  m_Center: {x: 0.000090611575, y: 0.00046434865, z: -0.00020454645}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2541876982691607759
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2541876982691607759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00376}
+  m_LocalPosition: {x: 0, y: -0.00004, z: -0.00319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2927209726542110460}
@@ -422,7 +422,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.016794166, y: 0.00018538936, z: 0.006350622}
-  m_Center: {x: 0.000090611575, y: 0.00046434865, z: -0.00020454645}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2605194266726290785
 GameObject:
   m_ObjectHideFlags: 0

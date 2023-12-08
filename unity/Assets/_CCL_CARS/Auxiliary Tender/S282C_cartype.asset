@@ -24,7 +24,7 @@ MonoBehaviour:
     - Language: 0
       Value: Auxiliary Tender polex
   liveries:
-  - {fileID: 11400000, guid: 645a7622f5d262c4585528deedcebf90, type: 2}
+  - {fileID: 11400000, guid: f9e7f978c6a81604381b21771adca67c, type: 2}
   mass: 10000
   bogieSuspensionMultiplier: 1
   rollingResistanceMultiplier: 1

@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: S282C_cartype
   m_EditorClassIdentifier: 
   KindSelection: 0
-  id: S282C1
+  id: S282CPolex
   carIdPrefix: AT-
   version: 0.1.5
   author: AdmiralHendrik
-  localizationKey: ccl/car/S282C1
-  NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender"}]'
+  localizationKey: ccl/car/S282CPolex
+  NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender polex"}]'
   NameTranslations:
     Items:
     - Language: 0
-      Value: Auxiliary Tender
+      Value: Auxiliary Tender polex
   liveries:
-  - {fileID: 11400000, guid: 374ada12577b2b045b7b21c4e2c4c2ad, type: 2}
+  - {fileID: 11400000, guid: 645a7622f5d262c4585528deedcebf90, type: 2}
   mass: 10000
   bogieSuspensionMultiplier: 1
   rollingResistanceMultiplier: 1

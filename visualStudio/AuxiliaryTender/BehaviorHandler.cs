@@ -54,8 +54,8 @@ namespace AuxiliaryTender
 			 where l.prefab != null && Constants.validTankNames.Any(name => l.prefab.name.Contains(name))
 			 select l).ToList<TrainCarLivery>().ForEach(livery =>
 			 {
-				 AttachWaterResource(livery);
-				 AttachHatch(livery);
+				 bool hasHatch = AttachHatch(livery);
+				 AttachWaterResource(livery, hasHatch);
 				 AttachWaterIndicator(livery);
 				 Main.Logger?.Log("Sim Controller created and initialized for prefab " + livery.prefab.name);
 			 });
@@ -75,10 +75,11 @@ namespace AuxiliaryTender
 				feeder.portId = "auxWater.NORMALIZED";
 				var controller = livery.prefab.gameObject.AddComponent<IndicatorPortReadersController>();
 				controller.entries = new IndicatorPortReader[] { feeder };
+				Main.Logger?.Log("Water indicator attached to " + livery.name);
 			}
 		}
 
-		private static void AttachWaterResource(TrainCarLivery livery)
+		private static void AttachWaterResource(TrainCarLivery livery, bool hasHatch)
 		{
 			var prefab = livery.prefab;
 			Main.Logger?.Log("Patching prefab " + prefab.name);
@@ -102,25 +103,40 @@ namespace AuxiliaryTender
 			waterContainer.ID = "auxWater";
 			waterContainer.capacity = 45000f;
 			waterContainer.defaultValue = waterContainer.capacity;
-			var simConnections = prefab.gameObject.AddComponent<SimConnectionDefinition>();
-			simConnections.executionOrder = new SimComponentDefinition[]
+			var executionOrder = new SimComponentDefinition[]
 			{
 					waterContainer
 			};
+			if (hasHatch)
+			{
+				var externalControl = prefab.gameObject.AddComponent<ExternalControlDefinition>();
+				externalControl.ID = "hatch";
+				externalControl.defaultValue = 0;
+				externalControl.saveState = true;
+				executionOrder = new SimComponentDefinition[]
+				{
+					externalControl,
+					waterContainer
+				};
+			}
+			var simConnections = prefab.gameObject.AddComponent<SimConnectionDefinition>();
+			simConnections.executionOrder = executionOrder;
 			simConnections.connections = new Connection[0];
 			simConnections.portReferenceConnections = new PortReferenceConnection[0];
 			var simController = prefab.gameObject.AddComponent<SimController>();
 			simController.connectionsDefinition = simConnections;
 			simController.otherSimControllers = new DV.Simulation.Controllers.ASimInitializedController[0];
 			prefab.gameObject.AddComponent<WaterModule>();
+			Main.Logger?.Log("Added water resource to " + livery.name);
 		}
 
-		private static void AttachHatch(TrainCarLivery livery)
+		private static bool AttachHatch(TrainCarLivery livery)
 		{
 			var externalInteractions = livery.externalInteractablesPrefab;
 			var hatch = FindRecursive(externalInteractions.transform, "AxTenderHatch")?.gameObject;
 			if (hatch != null)
 			{
+				Main.Logger?.Log("Hatch found for " + livery.name);
 				var lever = hatch.AddComponent<Lever>();
 				lever.rigidbodyMass = 30;
 				lever.rigidbodyDrag = 4;
@@ -138,8 +154,15 @@ namespace AuxiliaryTender
 				lever.jointLimitMin = 0;
 				lever.jointLimitMax = 160;
 				lever.colliderGameObjects = new GameObject[] { hatch.transform.Find("[colliders]").gameObject };
+				var feeder = hatch.AddComponent<InteractablePortFeeder>();
+				feeder.portId = "hatch.EXT_IN";
+				var controller = livery.externalInteractablesPrefab.gameObject.AddComponent<InteractablePortFeedersController>();
+				controller.entries = new InteractablePortFeeder[] { feeder };
 				hatch.transform.Find("water fill blocker").gameObject.layer = 15; // force this one to layer 15 so it can prevent filling.
+				Main.Logger?.Log("Hatch added to " + livery.name);
+				return true;
 			}
+			return false;
 		}
 
 		private static Transform? FindRecursive(Transform source, string name)

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 945288799, guid: b247489fc36790c41b197410cd8386d9, type: 3}
-  m_Name: S282C_livery 1
+  m_Name: S282C_Polex
   m_EditorClassIdentifier: 
   parentType: {fileID: 11400000, guid: 8f1f1b7d1a239d144b08ac51280b9f59, type: 2}
-  id: S282C1
+  id: S282CPolex
   BaseCarType: 200
-  NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender Custom"}]'
+  NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender Polex"}]'
   NameTranslations:
     Items:
     - Language: 0
-      Value: Auxiliary Tender Custom
+      Value: Auxiliary Tender Polex
   icon: {fileID: 0}
-  localizationKey: ccl/livery/S282C1
-  prefab: {fileID: 1688182864204300644, guid: 1b42c2a641789ac429c625ede5029fef, type: 3}
+  localizationKey: ccl/livery/S282CPolex
+  prefab: {fileID: 1688182864204300644, guid: 5059404705efa8748b64e3b06d95d325, type: 3}
   interiorPrefab: {fileID: 0}
   explodedInteriorPrefab: {fileID: 0}
-  externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 2475e821e54ac23438a78b99abe7c9d7,
+  externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 311f9af5257fc9549bbebbd59cfd92df,
     type: 3}
   explodedExternalInteractablesPrefab: {fileID: 0}
   UseCustomFrontBogie: 0

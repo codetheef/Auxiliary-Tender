@@ -37,6 +37,10 @@
 	<ItemGroup>
 		<DataFiles Include="$(ProjectDir)cars\**\*" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="cars\Tanker\car.json" />
+	  <Content Include="cars\Tanker\Info.json" />
+	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<!-- Copy to build folder -->

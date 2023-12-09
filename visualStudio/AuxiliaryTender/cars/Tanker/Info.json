@@ -1,0 +1,10 @@
+{
+	"Id":"S282CVanilla",
+	"DisplayName":"Auxiliary Tender Vanilla",
+	"Version":"0.1.5",
+	"Author":"AdmiralHendrik",
+	"ManagerVersion":"0.27.3",
+	"Requirements":[
+		"DVCustomCarLoader"
+	]
+}

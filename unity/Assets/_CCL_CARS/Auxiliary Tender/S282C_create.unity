@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: S282C_interactables
       objectReference: {fileID: 0}
+    - target: {fileID: 2990666240519507520, guid: 311f9af5257fc9549bbebbd59cfd92df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.097
+      objectReference: {fileID: 0}
     - target: {fileID: 7827193555322370895, guid: 311f9af5257fc9549bbebbd59cfd92df,
         type: 3}
       propertyPath: m_RootOrder

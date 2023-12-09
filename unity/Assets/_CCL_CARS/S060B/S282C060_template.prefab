@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 6846379453072882023}
   - component: {fileID: 4708329506384305499}
   - component: {fileID: 1519480178494980593}
+  - component: {fileID: 5457292142634105080}
   m_Layer: 0
   m_Name: '[walkable]'
   m_TagString: Untagged
@@ -268,6 +269,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.073185444, y: 1.5414877, z: 2.944932}
   m_Center: {x: 1.1166832, y: 1.8620515, z: -1.4808006}
+--- !u!65 &5457292142634105080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684400588684946164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2666147, y: 1.5479143, z: 0.07070411}
+  m_Center: {x: -0.0058823824, y: 1.8548197, z: -0.029371534}
 --- !u!1 &767369486658909936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7309967674734653486}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0015427172, y: 0.45590973, z: 0.99005365}
+  m_LocalPosition: {x: 0, y: 0.45590973, z: 0.99005365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 247023021216793840}

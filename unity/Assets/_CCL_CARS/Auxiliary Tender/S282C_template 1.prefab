@@ -627,6 +627,52 @@ Transform:
   m_Father: {fileID: 3477205538621110185}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &985283948295565547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2729781847233450054}
+  - component: {fileID: 9510506711708656}
+  m_Layer: 0
+  m_Name: Cswan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2729781847233450054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985283948295565547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6468148, y: 3.0322938, z: -5.856829}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6923559146813231640}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9510506711708656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985283948295565547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1095359204, guid: 314a6bcf0b307e647ac630eb5cfc4d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCost: 1000
+  clearCost: 1000
+  trainCarType: 21
 --- !u!1 &1230096422682412547
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +885,7 @@ Transform:
   - {fileID: 5893666470908400760}
   - {fileID: 6953537723304625999}
   - {fileID: 1816125112534472650}
+  - {fileID: 2729781847233450054}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,7 +25,7 @@ MonoBehaviour:
       Value: Auxiliary Tender MK
   liveries:
   - {fileID: 11400000, guid: 63223d86d97c8464aa9a86b91ba046de, type: 2}
-  mass: 25000
+  mass: 15000
   bogieSuspensionMultiplier: 1
   rollingResistanceMultiplier: 1
   wheelSlidingFrictionMultiplier: 1

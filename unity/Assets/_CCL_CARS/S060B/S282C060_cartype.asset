@@ -25,7 +25,7 @@ MonoBehaviour:
       Value: S060B
   liveries:
   - {fileID: 11400000, guid: be293572019c5ef4285ad5ee1a41a9da, type: 2}
-  mass: 25000
+  mass: 5000
   bogieSuspensionMultiplier: 1
   rollingResistanceMultiplier: 1
   wheelSlidingFrictionMultiplier: 1

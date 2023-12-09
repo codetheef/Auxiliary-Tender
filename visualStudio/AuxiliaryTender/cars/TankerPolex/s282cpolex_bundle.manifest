@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 3675479976
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5805e6f1a47de6e4038dac6cad3bcc73
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fd0e4f890bfb67e38f0d08d6cb428a9d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -701297949, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+- Class: 114
+  Script: {fileID: 945288799, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+- Class: 114
+  Script: {fileID: 1095359204, guid: 314a6bcf0b307e647ac630eb5cfc4d61, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/_CCL_CARS/Auxiliary Tender/S282C_cartype.asset
+- Assets/_CCL_CARS/Auxiliary Tender/S282C_interactables.prefab
+- Assets/_CCL_CARS/Auxiliary Tender/S282C_template.prefab
+- Assets/_CCL_CARS/Auxiliary Tender/S282C_livery.asset
+Dependencies: []

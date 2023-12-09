@@ -776,6 +776,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: hatch
       objectReference: {fileID: 0}
+    - target: {fileID: 5063794141551849693, guid: 395bce2300e72304f8f3c92b83363d36,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cdd308646b0bd040b28fba7d4a03732, type: 2}
     - target: {fileID: 6931901924256561792, guid: 395bce2300e72304f8f3c92b83363d36,
         type: 3}
       propertyPath: m_RootOrder

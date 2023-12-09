@@ -25,6 +25,7 @@ MonoBehaviour:
       Value: Auxiliary Tender Vanilla
   liveries:
   - {fileID: 11400000, guid: 79a31a434f941354fae423697c5523f5, type: 2}
+  - {fileID: 11400000, guid: f9e7f978c6a81604381b21771adca67c, type: 2}
   mass: 10000
   bogieSuspensionMultiplier: 1
   rollingResistanceMultiplier: 1

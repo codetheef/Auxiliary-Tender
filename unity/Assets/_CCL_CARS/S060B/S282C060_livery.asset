@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 945288799, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: S282C060_livery
+  m_EditorClassIdentifier: 
+  parentType: {fileID: 11400000, guid: c09568c4f6235cf46a09466521bbb1cd, type: 2}
+  id: S282C060
+  BaseCarType: 200
+  NameTranslationJson: '[{"Language":"English","Value":"S060B"}]'
+  NameTranslations:
+    Items:
+    - Language: 0
+      Value: S060B
+  icon: {fileID: 0}
+  localizationKey: ccl/livery/S282C060
+  prefab: {fileID: 1688182864204300644, guid: 32b4dd8adaa553d43948efaed3261dab, type: 3}
+  interiorPrefab: {fileID: 0}
+  explodedInteriorPrefab: {fileID: 0}
+  externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 1e38cf94d422d3b44811de5939332dd1,
+    type: 3}
+  explodedExternalInteractablesPrefab: {fileID: 0}
+  UseCustomFrontBogie: 1
+  UseCustomRearBogie: 1
+  UseCustomBuffers: 1
+  UseCustomHosePositions: 0
+  HideFrontCoupler: 0
+  HideBackCoupler: 0
+  buttonRender: 0

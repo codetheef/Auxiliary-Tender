@@ -30,7 +30,7 @@ MonoBehaviour:
   explodedExternalInteractablesPrefab: {fileID: 0}
   UseCustomFrontBogie: 1
   UseCustomRearBogie: 1
-  UseCustomBuffers: 0
+  UseCustomBuffers: 1
   UseCustomHosePositions: 0
   HideFrontCoupler: 0
   HideBackCoupler: 0

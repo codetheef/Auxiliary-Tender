@@ -57,9 +57,18 @@ namespace AuxiliaryTender
 				 bool hasHatch = AttachHatch(livery);
 				 AttachWaterResource(livery, hasHatch);
 				 AttachWaterIndicator(livery);
+				 ConfigureDamage(livery);
 				 Main.Logger?.Log("Sim Controller created and initialized for prefab " + livery.prefab.name);
 			 });
 			TerminateAttach();
+		}
+
+		private void ConfigureDamage(TrainCarLivery livery)
+		{
+			Main.Logger?.Log("Attempting to configure damage for " + livery.parentType + ", TrainType: " + livery.prefab.GetComponentInChildren<TrainCar>().carType);
+			livery.parentType.damage.wheelsHP = 1000;
+			livery.parentType.damage.bodyPrice = 22000;
+			livery.parentType.damage.wheelsPrice = 7000;
 		}
 
 		private static void AttachWaterIndicator(TrainCarLivery livery)

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 945288799, guid: b247489fc36790c41b197410cd8386d9, type: 3}
   m_Name: S282C_Polex
   m_EditorClassIdentifier: 
-  parentType: {fileID: 0}
+  parentType: {fileID: 11400000, guid: 169005fe95ff208419496d678c1254e7, type: 2}
   id: S282CPolex
-  BaseCarType: 200
+  BaseCarType: 21
   NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender Polex"}]'
   NameTranslations:
     Items:

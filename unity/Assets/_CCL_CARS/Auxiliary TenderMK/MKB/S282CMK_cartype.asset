@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -701297949, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: S282CMK_cartype
+  m_EditorClassIdentifier: 
+  KindSelection: 0
+  id: S282CMKB
+  carIdPrefix: AT-
+  version: 0.1.0
+  author: AdmiralHendrik
+  localizationKey: ccl/car/S282CMKB
+  NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender MK B"}]'
+  NameTranslations:
+    Items:
+    - Language: 0
+      Value: Auxiliary Tender MK B
+  liveries:
+  - {fileID: 11400000, guid: 63223d86d97c8464aa9a86b91ba046de, type: 2}
+  mass: 15000
+  bogieSuspensionMultiplier: 1
+  rollingResistanceMultiplier: 1
+  wheelSlidingFrictionMultiplier: 1
+  wheelslipFrictionMultiplier: 1
+  wheelRadius: 0.459
+  useDefaultWheelRotation: 1
+  CargoTypeJson: '[]'
+  CargoTypes:
+    Entries: []
+  brakes:
+    hasCompressor: 0
+    brakeValveType: 0
+    hasIndependentBrake: 0
+    hasHandbrake: 1
+    ignoreOverheating: 0
+    brakingForcePerBogieMultiplier: 1
+  damage:
+    wheelsHP: 0
+    mechanicalPowertrainHP: 0
+    electricalPowertrainHP: 0
+    bodyPrice: -1
+    wheelsPrice: -1
+    electricalPowertrainPrice: -1
+    mechanicalPowertrainPrice: -1
+  buttonRender: 0

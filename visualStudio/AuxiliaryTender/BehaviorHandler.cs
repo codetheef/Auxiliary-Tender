@@ -21,6 +21,7 @@ namespace AuxiliaryTender
 	internal class BehaviorHandler : MonoBehaviour
 	{
 		static GameObject? _object = null;
+		private static List<TrainCarLivery> pendingLiveries = new();
 		public static void AttachBehavior()
 		{
 			if (_object == null)

@@ -17,6 +17,8 @@ namespace AuxiliaryTender;
 [EnableReloading]
 public static class Main
 {
+	private static Harmony harmony;
+
 	public static ModEntry.ModLogger? Logger { get; private set; }
 	// Unity Mod Manage Wiki: https://wiki.nexusmods.com/index.php/Category:Unity_Mod_Manager
 	public static bool Load(ModEntry modEntry)
@@ -26,6 +28,8 @@ public static class Main
 		try
 		{
 			Logger?.Log("Auxiliary Tender Mod Loaded");
+			harmony = new Harmony(modEntry.Info.Id);
+			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			modEntry.OnUnload = Unload;
 			BehaviorHandler.AttachBehavior();
 			// Other plugin startup logic
@@ -33,15 +37,17 @@ public static class Main
 		catch (Exception ex)
 		{
 			modEntry.Logger.LogException($"Failed to load {modEntry.Info.DisplayName}:", ex);
+			harmony?.UnpatchAll(modEntry.Info.Id);
 			return false;
 		}
 
 		return true;
 	}
 
-	private static bool Unload(ModEntry entry)
+	private static bool Unload(ModEntry modEntry)
 	{
-		entry.Logger.Log("Unloading");
+		modEntry.Logger.Log("Unloading");
+		harmony?.UnpatchAll(modEntry.Info.Id);
 		return true;
 	}
 }

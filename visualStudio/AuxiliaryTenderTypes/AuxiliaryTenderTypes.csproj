@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>
+		<AssemblyVersion>1.0.*</AssemblyVersion>
+		<Deterministic>false</Deterministic>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="UnityEngine.CoreModule" />
+		<Reference Include="DV.ThingTypes" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<!-- Copy to build folder -->
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="../build/" />
+
+	</Target>
+</Project>

@@ -41,6 +41,11 @@
 	  <Content Include="cars\Tanker\car.json" />
 	  <Content Include="cars\Tanker\Info.json" />
 	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AuxiliaryTenderTypes\AuxiliaryTenderTypes.csproj">
+			<Private>True</Private>
+		</ProjectReference>
+	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<!-- Copy to build folder -->

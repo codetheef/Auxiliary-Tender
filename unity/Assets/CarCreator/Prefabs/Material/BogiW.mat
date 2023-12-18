@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spoornet
+  m_Name: BogiW
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e434149f753cc594b9c4e61bb4bf72c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1c857d6658efc34bbeb4f9cfe138cee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,15 +40,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 82efa4e092f9c5d429691ec91ac3043f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7239865d42fb15e44b82b10086ca9aa5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: cb1963f6573931144b9ba93fc3156047, type: 3}
+        m_Texture: {fileID: 2800000, guid: f9f7aed93f47c034dae4aa7721d71755, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: cb1963f6573931144b9ba93fc3156047, type: 3}
+        m_Texture: {fileID: 2800000, guid: f9f7aed93f47c034dae4aa7721d71755, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

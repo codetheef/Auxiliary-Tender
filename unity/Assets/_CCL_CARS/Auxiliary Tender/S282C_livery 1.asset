@@ -28,8 +28,8 @@ MonoBehaviour:
   externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 2475e821e54ac23438a78b99abe7c9d7,
     type: 3}
   explodedExternalInteractablesPrefab: {fileID: 0}
-  UseCustomFrontBogie: 0
-  UseCustomRearBogie: 0
+  UseCustomFrontBogie: 1
+  UseCustomRearBogie: 1
   UseCustomBuffers: 1
   UseCustomHosePositions: 0
   HideFrontCoupler: 0

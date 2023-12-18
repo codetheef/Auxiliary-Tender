@@ -9,8 +9,6 @@ namespace AuxiliaryTender;
 [EnableReloading]
 public static class Main
 {
-	private static Harmony harmony;
-
 	public static ModEntry.ModLogger? Logger { get; private set; }
 	private static Harmony? harmony;
 	// Unity Mod Manage Wiki: https://wiki.nexusmods.com/index.php/Category:Unity_Mod_Manager

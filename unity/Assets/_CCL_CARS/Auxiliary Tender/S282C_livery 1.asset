@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentType: {fileID: 11400000, guid: 169005fe95ff208419496d678c1254e7, type: 2}
   id: S282C1
-  BaseCarType: 200
+  BaseCarType: 21
   NameTranslationJson: '[{"Language":"English","Value":"Auxiliary Tender Custom"}]'
   NameTranslations:
     Items:

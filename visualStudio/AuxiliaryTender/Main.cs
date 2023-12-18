@@ -1,14 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using CCLCareerSpawnerTypes;
-using DV;
-using DV.ThingTypes;
 using HarmonyLib;
-using UnityEngine;
 using UnityModManagerNet;
 using static UnityModManagerNet.UnityModManager;
 
@@ -20,6 +12,7 @@ public static class Main
 	private static Harmony harmony;
 
 	public static ModEntry.ModLogger? Logger { get; private set; }
+	private static Harmony? harmony;
 	// Unity Mod Manage Wiki: https://wiki.nexusmods.com/index.php/Category:Unity_Mod_Manager
 	public static bool Load(ModEntry modEntry)
 	{
@@ -31,7 +24,15 @@ public static class Main
 			harmony = new Harmony(modEntry.Info.Id);
 			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			modEntry.OnUnload = Unload;
+			Harmony.DEBUG = true;
+			harmony = new Harmony(modEntry.Info.Id);
+			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			BehaviorHandler.AttachBehavior();
+			WorldStreamingInit.LoadingFinished += Start;
+			if (WorldStreamingInit.Instance && WorldStreamingInit.IsLoaded)
+			{
+				Start();
+			}
 			// Other plugin startup logic
 		}
 		catch (Exception ex)
@@ -49,5 +50,10 @@ public static class Main
 		modEntry.Logger.Log("Unloading");
 		harmony?.UnpatchAll(modEntry.Info.Id);
 		return true;
+	}
+	private static void Start()
+	{
+		Main.Logger?.Log("Startup called");
+		SpawnerConfig.StartSpawner();
 	}
 }

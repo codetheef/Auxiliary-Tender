@@ -59,11 +59,12 @@ namespace AuxiliaryTender
 				 AttachWaterResource(livery, hasHatch);
 				 AttachWaterIndicator(livery);
 				 ConfigureDamage(livery);
+				 var carTypeConfig = livery.prefab.AddComponent<CarTypeConfig>();
+				 carTypeConfig.trainCarType = TrainCarType.Tender;
 				 Main.Logger?.Log("Sim Controller created and initialized for prefab " + livery.prefab.name);
 			 });
 			TerminateAttach();
 		}
-
 		private void ConfigureDamage(TrainCarLivery livery)
 		{
 			Main.Logger?.Log("Attempting to configure damage for " + livery.parentType + ", TrainType: " + livery.prefab.GetComponentInChildren<TrainCar>().carType);
@@ -178,7 +179,7 @@ namespace AuxiliaryTender
 		private static Transform? FindRecursive(Transform source, string name)
 		{
 			Transform? child = null;
-			List<Transform> children = new List<Transform> { source };
+			List<Transform> children = new() { source };
 			while (children.Count > 0 && child == null)
 			{
 				child = (from found in (from c in children

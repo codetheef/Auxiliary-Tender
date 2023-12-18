@@ -12,7 +12,7 @@
 	<!-- Derail Valley -->
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp" />
-		<Reference Include="CCLCareerSpawnerTypes" />
+		<Reference Include="DV.PointSet" />
 		<Reference Include="DV.Simulation" />
 		<Reference Include="DV.ThingTypes" />
 		<Reference Include="DV.Utils" />
@@ -20,6 +20,8 @@
 
 	<!-- Unity -->
 	<ItemGroup>
+		<Reference Include="net.smkd.vector3d" />
+		<Reference Include="BezierCurves" />
 		<Reference Include="UnityEngine" />
 		<Reference Include="UnityEngine.CoreModule" />
 	</ItemGroup>

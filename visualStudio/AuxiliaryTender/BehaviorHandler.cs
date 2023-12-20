@@ -109,33 +109,25 @@ namespace AuxiliaryTender
 					item.SetValue(damageController, new string[] { });
 				}
 			}
-			var waterContainer = prefab.gameObject.AddComponent<WaterContainerDefinition>();
-			waterContainer.ID = "auxWater";
-			waterContainer.capacity = 45000f;
-			waterContainer.defaultValue = waterContainer.capacity;
-			var executionOrder = new SimComponentDefinition[]
-			{
-					waterContainer
-			};
-			if (hasHatch)
-			{
-				var externalControl = prefab.gameObject.AddComponent<ExternalControlDefinition>();
-				externalControl.ID = "hatch";
-				externalControl.defaultValue = 0;
-				externalControl.saveState = true;
-				executionOrder = new SimComponentDefinition[]
-				{
-					externalControl,
-					waterContainer
-				};
-			}
-			var simConnections = prefab.gameObject.AddComponent<SimConnectionDefinition>();
-			simConnections.executionOrder = executionOrder;
-			simConnections.connections = new Connection[0];
-			simConnections.portReferenceConnections = new PortReferenceConnection[0];
-			var simController = prefab.gameObject.AddComponent<SimController>();
-			simController.connectionsDefinition = simConnections;
-			simController.otherSimControllers = new DV.Simulation.Controllers.ASimInitializedController[0];
+			//if (hasHatch)
+			//{
+			//	var externalControl = prefab.gameObject.AddComponent<ExternalControlDefinition>();
+			//	externalControl.ID = "hatch";
+			//	externalControl.defaultValue = 0;
+			//	externalControl.saveState = true;
+			//	executionOrder = new SimComponentDefinition[]
+			//	{
+			//		externalControl,
+			//		waterContainer
+			//	};
+			//}
+			//var simConnections = prefab.gameObject.AddComponent<SimConnectionDefinition>();
+			//simConnections.executionOrder = executionOrder;
+			//simConnections.connections = new Connection[0];
+			//simConnections.portReferenceConnections = new PortReferenceConnection[0];
+			//var simController = prefab.gameObject.AddComponent<SimController>();
+			//simController.connectionsDefinition = simConnections;
+			//simController.otherSimControllers = new DV.Simulation.Controllers.ASimInitializedController[0];
 			prefab.gameObject.AddComponent<WaterModule>();
 			Main.Logger?.Log("Added water resource to " + livery.name);
 		}

@@ -25,7 +25,7 @@ MonoBehaviour:
   prefab: {fileID: 2888006403867828756, guid: 46d7cad772422a141bd56789701c3b02, type: 3}
   interiorPrefab: {fileID: 0}
   explodedInteriorPrefab: {fileID: 0}
-  externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 2475e821e54ac23438a78b99abe7c9d7,
+  externalInteractablesPrefab: {fileID: 1312500395324393714, guid: 311f9af5257fc9549bbebbd59cfd92df,
     type: 3}
   explodedExternalInteractablesPrefab: {fileID: 0}
   UseCustomFrontBogie: 0

@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2461409745404857106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4411557667209340989}
+  - component: {fileID: 5449050919138835082}
+  - component: {fileID: 4289538493183225797}
+  m_Layer: 13
+  m_Name: StaticInteraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4411557667209340989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461409745404857106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6931901924256561792}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5449050919138835082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461409745404857106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -112135585, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4289538493183225797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461409745404857106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017, y: 0.0003600312, z: 0.00601}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2589197319360302753
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +66,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 820140823678409644}
+  - component: {fileID: 5833417694104718218}
+  - component: {fileID: 2904499121141683632}
   m_Layer: 13
   m_Name: AxTenderHatch
   m_TagString: Untagged
@@ -33,6 +92,63 @@ Transform:
   m_Father: {fileID: 5209357932045462167}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5833417694104718218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589197319360302753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2119232246, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disallowShortTriggerLockHold: 0
+  colliderGameObjects:
+  - {fileID: 0}
+  rigidbodyMass: 30
+  rigidbodyDrag: 4
+  rigidbodyAngularDrag: 0
+  blockDrag: 0
+  blockAngularDrag: 0
+  invertDirection: 0
+  interactionPoint: {fileID: 0}
+  maxForceAppliedMagnitude: Infinity
+  pullingForceMultiplier: 1
+  scrollWheelHoverScroll: 0.025
+  scrollWheelSpring: 0
+  useSteppedJoint: 1
+  steppedValueUpdate: 1
+  notches: 2
+  useInnerLimitSpring: 0
+  innerLimitMinNotch: 0
+  innerLimitMaxNotch: 0
+  jointAxis: {x: 1, y: 0, z: 0}
+  useSpring: 1
+  jointSpring: 175
+  jointDamper: 17.5
+  useLimits: 1
+  jointLimitMin: 0
+  jointLimitMax: 160
+  nonVrStaticInteractionArea: {fileID: 5449050919138835082}
+  notch: {fileID: 0}
+  drag: {fileID: 0}
+  limitHit: {fileID: 0}
+  limitVibration: 0
+--- !u!114 &2904499121141683632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589197319360302753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -544725653, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portId: hatch.EXT_IN
 --- !u!1 &2969522713039526350
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +177,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 5209357932045462167}
+  - {fileID: 4411557667209340989}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

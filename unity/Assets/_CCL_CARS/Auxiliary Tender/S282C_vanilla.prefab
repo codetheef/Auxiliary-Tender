@@ -1971,6 +1971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7768305793241723728}
   - component: {fileID: 3034475348599534798}
+  - component: {fileID: 6343577135314822472}
   m_Layer: 0
   m_Name: simObjects
   m_TagString: Untagged
@@ -2001,12 +2002,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4758620879283893720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -994118283, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Script: {fileID: -507730800, guid: b247489fc36790c41b197410cd8386d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ID: auxWater
   capacity: 45000
   defaultValue: 45000
+  type: 4
+--- !u!114 &6343577135314822472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758620879283893720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19037246, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: hatch
+  defaultValue: 0
+  saveState: 1
 --- !u!1 &4819402874496332554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,6 +2298,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5400446884754032769}
+  - component: {fileID: 1852975756537637257}
+  - component: {fileID: 435827921240080910}
   m_Layer: 0
   m_Name: AxTenderWater
   m_TagString: Untagged
@@ -2303,6 +2322,41 @@ Transform:
   m_Father: {fileID: 8790850746539193326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1852975756537637257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962214574643407592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1549161656, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portId: auxWater.NORMALIZED
+  indicatorRangeScalerPortId: 
+  fuseId: 
+  valueMultiplier: 1
+  valueOffset: 0
+  useAbsoluteValue: 0
+--- !u!114 &435827921240080910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962214574643407592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2126552406, guid: b247489fc36790c41b197410cd8386d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minValue: 0
+  maxValue: 1
+  indicatorToScale: {fileID: 5400446884754032769}
+  startScale: {x: 1, y: 0, z: 1}
+  endScale: {x: 1, y: 1, z: 1}
 --- !u!1 &6072359492256103751
 GameObject:
   m_ObjectHideFlags: 0

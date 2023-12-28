@@ -109,7 +109,7 @@ Transform:
   - {fileID: 6043511418445311441}
   - {fileID: 3901997439473524499}
   - {fileID: 4371253408053704772}
-  - {fileID: 7850588391836811366}
+  - {fileID: 76750778552786258}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -764,23 +764,23 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &919284760819645158
+--- !u!1001 &6999645503519926226
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 7827193555322370895}
     m_Modifications:
+    - target: {fileID: 2461409745404857106, guid: 395bce2300e72304f8f3c92b83363d36,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2969522713039526350, guid: 395bce2300e72304f8f3c92b83363d36,
         type: 3}
       propertyPath: m_Name
       value: hatch
       objectReference: {fileID: 0}
-    - target: {fileID: 5063794141551849693, guid: 395bce2300e72304f8f3c92b83363d36,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cdd308646b0bd040b28fba7d4a03732, type: 2}
     - target: {fileID: 6931901924256561792, guid: 395bce2300e72304f8f3c92b83363d36,
         type: 3}
       propertyPath: m_RootOrder
@@ -838,9 +838,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 395bce2300e72304f8f3c92b83363d36, type: 3}
---- !u!4 &7850588391836811366 stripped
+--- !u!4 &76750778552786258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6931901924256561792, guid: 395bce2300e72304f8f3c92b83363d36,
     type: 3}
-  m_PrefabInstance: {fileID: 919284760819645158}
+  m_PrefabInstance: {fileID: 6999645503519926226}
   m_PrefabAsset: {fileID: 0}

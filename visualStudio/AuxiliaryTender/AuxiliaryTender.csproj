@@ -41,7 +41,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Content Include="cars\Tanker\car.json" />
-	  <Content Include="cars\Tanker\Info.json" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

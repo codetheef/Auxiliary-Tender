@@ -41,13 +41,11 @@ namespace AuxiliaryTender
 			var iterator = instructions.GetEnumerator();
 			while (iterator.MoveNext()) {
 				var instruction = iterator.Current;
-				Main.Logger?.Log(instruction.ToString());
 				if (instruction.opcode.Equals(OpCodes.Call) && ((MethodInfo)instruction.operand).Name.Equals("Any"))
 				{
 					yield return instruction;
 					iterator.MoveNext();
 					var brtrue = iterator.Current;
-					Main.Logger?.Log(brtrue.operand.ToString());
 					yield return brtrue;
 					yield return new CodeInstruction(OpCodes.Ldarg_0);
 					yield return new CodeInstruction(OpCodes.Ldfld, locoTypeGroupsToSpawn);

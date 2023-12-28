@@ -20,7 +20,6 @@ public static class Main
 		{
 			Logger?.Log("Auxiliary Tender Mod Loaded");
 			modEntry.OnUnload = Unload;
-			Harmony.DEBUG = true;
 			harmony = new Harmony(modEntry.Info.Id);
 			harmony.PatchAll(Assembly.GetExecutingAssembly());
 			BehaviorHandler.AttachBehavior();

@@ -1,7 +1,7 @@
 {
 	"Id": "S282C",
 	"DisplayName": "Auxiliary Tender",
-	"Version": "1.0.0.rc2",
+	"Version": "1.1.0",
 	"Author": "AdmiralHendrik",
 	"ManagerVersion": "0.27.3",
 	"EntryMethod": "AuxiliaryTender.Main.Load",
